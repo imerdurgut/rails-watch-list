@@ -7,4 +7,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :lists
+  resources :bookmarks
+
+  resources :lists do
+    resources :bookmarks, only: [:new, :create] #linki dusun bookmarki yaratmak icin liste ihtiyac var
+  end
+  resources :bookmarks, only: [:destroy] #ama bir bookmarki direkt idsine gore destroy edebilirsin. liste ihtiyacin yok
 end
