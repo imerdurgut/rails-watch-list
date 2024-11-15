@@ -1,1 +1,16 @@
-<%= @list.name %>
+<div class = "container">
+  <h1><%= @list.name %></h1>
+
+  <div class="d-flex row">
+  <% @bookmarks.each do |bookmark| %>
+    <div class="col-4">
+      <img src="<%= bookmark.movie.poster_url %>" alt="Poster" width="400px">
+      <p><strong><%= bookmark.movie.title %></strong></p>
+      <p><%= bookmark.movie.overview %></p>
+      <p>Rating: <strong><%= bookmark.movie.rating %></strong></p>
+      <p>Your comment: <%= bookmark.comment %></p>
+    </div>
+  <% end %>
+  </div>
+  <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+</div>
