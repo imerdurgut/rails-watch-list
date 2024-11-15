@@ -9,6 +9,8 @@
       <p><%= bookmark.movie.overview %></p>
       <p>Rating: <strong><%= bookmark.movie.rating %></strong></p>
       <p>Your comment: <%= bookmark.comment %></p>
+      <%= link_to "Delete", bookmark_path(bookmark.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      <%# bookmark_path(bookmark.id) - burasi deletein bookmarkindan aldigimiz path, bunun yaninda da idyi almamiz gerektigi yaziyor. routesu incele %>
     </div>
   <% end %>
   </div>

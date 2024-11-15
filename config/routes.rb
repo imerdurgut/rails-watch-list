@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   resources :lists do
     resources :bookmarks, only: [:new, :create] #linki dusun bookmarki yaratmak icin liste ihtiyac var
   end
+
   resources :bookmarks, only: [:destroy] #ama bir bookmarki direkt idsine gore destroy edebilirsin. liste ihtiyacin yok
 end
